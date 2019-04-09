@@ -9,10 +9,10 @@ namespace Podium.Endpoints.Authentication
     using Podium.Models.EndpointModels.Authentication;
     public class CheckTokenEndpoint
     {
-        public static CheckAdminEndpointModels.ResponseModel EndpointMethod(PodiumContext db,
-            CheckAdminEndpointModels.RequestModel req)
+        public static CheckTokenEndpointModels.ResponseModel EndpointMethod(PodiumContext db,
+            CheckTokenEndpointModels.RequestModel req)
         {
-            var res = new CheckAdminEndpointModels.ResponseModel();
+            var res = new CheckTokenEndpointModels.ResponseModel();
 
             try
             {
@@ -39,7 +39,7 @@ namespace Podium.Endpoints.Authentication
             }
             catch (Exception e)
             {
-                res = new CheckAdminEndpointModels.ResponseModel()
+                res = new CheckTokenEndpointModels.ResponseModel()
                 {
                     Message = e.Message,
                     Status = false
