@@ -27,6 +27,8 @@ namespace Podium.Endpoints.Authentication
                 {
                     throw new Exception("Registration failed: Email is already in use");
                 }
+                // TODO: Use regex to ensure the email is actually an email
+                // TODO: Password constr
                 else
                 {
                     db.Users.Add(new UserDbModel()
@@ -42,6 +44,8 @@ namespace Podium.Endpoints.Authentication
                         DateTimeCreated = DateTime.Now
                     });
 
+                    // TODO: Send out the email verification email
+                    
                     db.SaveChanges();
 
                     res.Status = true;
